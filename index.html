@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>UI</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+
+  <body>
+    <div class="wrap app" data-state="initial">
+      <ul class="menu">
+        <li class="menu__item drag"></li>
+
+        <li class="menu__item burger">
+          <i class="burger-icon"></i>
+        </li>
+
+        <li class="menu__item mode new">
+          <i class="menu__icon new-icon"></i>
+          <span class="menu__item-title">Загрузить<br>новое</span>
+        </li>
+
+        <li class="menu__item mode comments" data-state="">
+          <i class="menu__icon comments-icon"></i>
+          <span class="menu__item-title">Комментарии</span>
+        </li>
+        <li class="menu__item tool comments-tools">
+          <span class="menu__toggle-bg">
+            <input class="menu__toggle" type="radio" name="toggle" value="on" id="comments-on" checked><label class="menu__toggle-title menu__toggle-title_on" for="comments-on">Показать<br>комментарии</label>
+            <input class="menu__toggle" type="radio" name="toggle" value="off" id="comments-off"><label class="menu__toggle-title menu__toggle-title_off" for="comments-off">Скрыть<br>комментарии</label>
+            <span class="menu__toggle-bttn"></span>
+          </span>
+        </li>
+
+        <li class="menu__item mode draw" data-state="">
+          <i class="menu__icon draw-icon"></i>
+          <span class="menu__item-title">Рисовать</span>
+        </li>
+        <li class="menu__item tool draw-tools">
+          <input class="menu__color red" type="radio" name="color" value="red"><span></span>
+          <input class="menu__color yellow" type="radio" name="color" value="yellow"><span></span>
+          <input class="menu__color green" type="radio" name="color" value="green" checked><span></span>
+          <input class="menu__color blue" type="radio" name="color" value="blue"><span></span>
+          <input class="menu__color purple" type="radio" name="color" value="purple"><span></span>
+        </li>
+
+        <li class="menu__item mode share" data-state="">
+          <i class="menu__icon share-icon"></i>
+          <span class="menu__item-title">Поделиться</span>
+        </li>
+        <li class="menu__item tool share-tools">
+            <input class="menu__url" type="text" value="http://2mlfg4vp">
+            <input class="menu_copy" type="button" value="Копировать">
+        </li>
+      </ul>
+
+      <img class="current-image" src="./pic/image.jpg">
+      
+      <div class="error" style="display: none;">
+        <h4 class="error__header">Ошибка</h4>
+        <p class="error__message">Неверный формат файла. Пожалуйста, выберите изображение в формате .jpg или .png.</p>
+      </div>
+      
+      <div class="image-loader" style="display: none;">
+        <div class="loader">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p class="image-loader__message">Загружаю изображение...</p>
+      </div>      
+      
+      <form class="comments__form">
+        <span class="comments__marker"></span><input type="checkbox" class="comments__marker-checkbox">
+        <div class="comments__body">
+          <div class="comment">
+            <p class="comment__time">28.02.18 19:09:33</p>
+            <p class="comment__message">Здесь будет комментарий</p>
+          </div>
+          <div class="comment">
+            <p class="comment__time">28.02.18 19:11:01</p>
+            <p class="comment__message">А здесь будет многострочный комментарий, строки на 2 хотя бы.</p>
+          </div>
+          <div class="comment">
+            <p class="comment__time">28.02.18 23:58:01</p>
+            <p class="comment__message">А когда они будут?</p>
+          </div>
+          <div class="comment">
+            <div class="loader">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>            
+          </div>          
+          <textarea class="comments__input" type="text" placeholder="Напишите ответ..."></textarea>
+          <input class="comments__close" type="button" value="Закрыть">
+          <input class="comments__submit" type="submit" value="Отправить">
+        </div>
+      </form>
+
+    </div>
+  </body>
+
+  <script src="./js/solution.js"></script>
+
+</html>
